@@ -13,9 +13,9 @@ test('sorts same-date entries by severity', () => {
 });
 
 const bettweenDatesSample: DiagnosticType[] = [
+  { id: '3', date: '2025-06-05', faultType: 'C', severity: 'Healthy' },
   { id: '1', date: '2025-06-21', faultType: 'A', severity: 'Alarm' },
   { id: '2', date: '2025-06-20', faultType: 'B', severity: 'Critical' },
-  { id: '3', date: '2025-06-19', faultType: 'C', severity: 'Healthy' },
 ];
 
 describe('getFilteredDiagnosticsBettweenDates', () => {
@@ -23,7 +23,7 @@ describe('getFilteredDiagnosticsBettweenDates', () => {
     const selectedDate = new Date('2025-06-15');
     const result = getFilteredDiagnosticsBettweenDates({ data: bettweenDatesSample, selectedDate });
 
-    expect(result.map((d) => d.id)).toEqual(['1', '2', '3']);
+    expect(result.map((d) => d.id)).toEqual(['1', '2']);
   });
 
   it('returns empty array when no items fall in range', () => {
