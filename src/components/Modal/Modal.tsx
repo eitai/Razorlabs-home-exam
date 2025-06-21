@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { CustomDropdown } from '../CustomDropdown/CustomDropdown';
 import { DatePicker } from '../../features/DatePicker/DatePicker';
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IoChevronDownOutline } from 'react-icons/io5';
 import { FormValues, ModalProps } from '../../types/modalTypes';
 import { FaultDropdownOptions, SeverityDropdownOptions } from '../../services/modalService';
@@ -44,6 +44,8 @@ export const Modal = ({ isModalOpened, onClose, setDiagnosticData }: ModalProps)
   };
 
   const datePickerProps = { selectedDate, setSelectedDate, isDatePickerPopupOpened };
+
+  useEffect(() => reset(), [isModalOpened]);
 
   return (
     <div css={[overlayStyle, isModalOpened ? fadeIn : fadeOut]} onClick={onCloseModal}>

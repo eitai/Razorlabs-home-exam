@@ -20,7 +20,7 @@ export const DiagnosticPage = () => {
   const DiagnosticTableProps = { diagnosticData, setDiagnosticData };
 
   return (
-    <div css={containerStyle}>
+    <div>
       <div css={chartContainerStyle}>
         <div css={chartTitleWrapperStyle}>
           <div css={chartTitleStyle}>
@@ -77,8 +77,4 @@ const chartContainerStyle = css`
 background-color: #e7e8ec;
 padding: 10px 5px 5px 5px;
 border-radius: 10px;
-`;
-
-const containerStyle = css`
-
 `;

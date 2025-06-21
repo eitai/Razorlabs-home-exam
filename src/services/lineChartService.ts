@@ -15,11 +15,11 @@ export const getColorBySeverity = (severity: string) => {
   }
 };
 
-export const severityToNumber = {
-  Critical: 1,
-  Alarm: 2,
-  Healthy: 3,
-} as const;
+export enum severityToNumber {
+  'Critical' = 1,
+  'Alarm' = 2,
+  'Healthy' = 3,
+}
 
 export const lineChartOptions = {
   responsive: true,
@@ -84,10 +84,10 @@ export const getChartDataByMaxSeverityPerDay = ({ chartData }: { chartData: Diag
     return acc;
   }, [] as DiagnosticType[]);
 
-export const SortDirection = {
-  ASCENDING: 'ascending',
-  DESCENDING: 'descending',
-} as const;
+export enum SortDirection {
+  'DESCENDING' = 'ascending',
+  'ASCENDING' = 'descending',
+}
 
 export type SortDirectionType = (typeof SortDirection)[keyof typeof SortDirection];
 
