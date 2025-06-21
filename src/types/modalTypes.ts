@@ -1,5 +1,5 @@
-import { DiagnosticType } from './diagnosticTypes';
 import { Dispatch, SetStateAction } from 'react';
+import { DiagnosticType } from './diagnosticTypes';
 
 export interface ModalProps {
   isModalOpened: boolean;

@@ -13,7 +13,8 @@ export const DiagnosticTable = ({ diagnosticData, setDiagnosticData }: TableProp
 
   const diagnosticTableProps = { setDiagnosticData, diagnosticData: sortedByDateDiagnosticTableData };
 
-  const modalProps = { isModalOpened, onClose: () => setIsModalOpened(false), setDiagnosticData };
+  const modalProps = { isModalOpened, onClose: () => setIsModalOpened(false), setDiagnosticData: setDiagnosticData };
+
   return (
     <>
       <div>

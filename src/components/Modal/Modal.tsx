@@ -65,7 +65,6 @@ export const Modal = ({ isModalOpened, onClose, setDiagnosticData }: ModalProps)
             <CustomDropdown title='Severity' name='severity' options={SeverityDropdownOptions} register={register} />
             {errors.severity && <span css={errorText}>Severity is required</span>}
           </div>
-
           <div css={btnsWrapperStyle}>
             <button type='button' css={cancelBtnStyle} onClick={onCloseModal}>
               Cancel
